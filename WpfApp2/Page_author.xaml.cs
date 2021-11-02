@@ -34,7 +34,7 @@ namespace WpfApp2
             if (z != null)
             {
                 MessageBox.Show(z.Name);
-                NavigationService.Navigate(new Page_zakaz());
+                NavigationService.Navigate(new zakaz1());
 
             }
             else
@@ -47,6 +47,11 @@ namespace WpfApp2
         private void Botton_click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Page_reg());
+        }
+
+        private void txt_Login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

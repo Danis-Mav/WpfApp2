@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище uchbazModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ALKO">
+          <Key>
+            <PropertyRef Name="Id_alko" />
+          </Key>
+          <Property Name="Id_alko" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="Dish">
+          <Key>
+            <PropertyRef Name="if_dish" />
+          </Key>
+          <Property Name="if_dish" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="ID" />
@@ -15,6 +31,14 @@
           <Property Name="login" Type="nvarchar" MaxLength="50" />
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="id_position" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NoAlk">
+          <Key>
+            <PropertyRef Name="id_NoAlk" />
+          </Key>
+          <Property Name="id_NoAlk" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -46,7 +70,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище uchbazModelContainer">
+          <EntitySet Name="ALKO" EntityType="Self.ALKO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NoAlk" EntityType="Self.NoAlk" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
@@ -59,6 +86,22 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="uchbazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ALKO">
+          <Key>
+            <PropertyRef Name="Id_alko" />
+          </Key>
+          <Property Name="Id_alko" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Dish">
+          <Key>
+            <PropertyRef Name="if_dish" />
+          </Key>
+          <Property Name="if_dish" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="ID" />
@@ -70,6 +113,14 @@
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="id_position" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="NoAlk">
+          <Key>
+            <PropertyRef Name="id_NoAlk" />
+          </Key>
+          <Property Name="id_NoAlk" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -102,7 +153,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="uchbazEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ALKO" EntityType="Self.ALKO" />
+          <EntitySet Name="Dish" EntityType="Self.Dish" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="NoAlk" EntityType="Self.NoAlk" />
           <EntitySet Name="Position" EntityType="Self.Position" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
@@ -116,6 +170,24 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище uchbazModelContainer" CdmEntityContainer="uchbazEntities1">
+          <EntitySetMapping Name="ALKO">
+            <EntityTypeMapping TypeName="uchbazModel.ALKO">
+              <MappingFragment StoreEntitySet="ALKO">
+                <ScalarProperty Name="Id_alko" ColumnName="Id_alko" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dish">
+            <EntityTypeMapping TypeName="uchbazModel.Dish">
+              <MappingFragment StoreEntitySet="Dish">
+                <ScalarProperty Name="if_dish" ColumnName="if_dish" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="uchbazModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
@@ -125,6 +197,15 @@
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="id_position" ColumnName="id_position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoAlk">
+            <EntityTypeMapping TypeName="uchbazModel.NoAlk">
+              <MappingFragment StoreEntitySet="NoAlk">
+                <ScalarProperty Name="id_NoAlk" ColumnName="id_NoAlk" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -6,22 +6,28 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200">
+    
+
+    
     <Border Background="Aquamarine" BorderBrush="Gainsboro" BorderThickness="1">
         <Grid>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="10*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="10*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Column="1" Grid.Row="1" Background="#00ffff ">
+            <Image Grid.ColumnSpan="3" Grid.RowSpan="3" Source="Image2.png" Stretch="Fill"/>
+            <StackPanel Grid.Column="1" Grid.Row="1" Background="CornflowerBlue">
                 <Frame x:Name="frame_autho_reg" NavigationUIVisibility="Hidden"/>
+                <Button x:Name="backBtn" Width="30" Height="30" HorizontalAlignment="Left" Background="White" Click="backBtn_Click" Margin="5,605,0,600"/>
             </StackPanel>
+            
         </Grid>
     </Border>
 </Window>

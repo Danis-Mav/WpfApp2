@@ -16,19 +16,18 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для zakaz1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class zakaz1 : Page
     {
-        public MainWindow()
+        public zakaz1()
         {
             InitializeComponent();
-            frame_autho_reg.NavigationService.Navigate(new Page_author());
         }
 
-        private void backBtn_Click(object sender, RoutedEventArgs e)
+        private void Button_Click1(object sender, RoutedEventArgs e)
         {
-           //zakaz1.NavigationService.GoBack();
+            NavigationService.Navigate(new Page_zakaz());
         }
     }
 }

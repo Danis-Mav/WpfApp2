@@ -5,11 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="900"
+      d:DesignHeight="800" d:DesignWidth="1200"
       Title="Page_reg">
+    
     <Page.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="40"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10"
+                                Background="DeepSkyBlue"
+                                Padding="5">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Page.Resources>
     <Grid Margin="20">
@@ -25,7 +41,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="                 Registration"  FontSize="60" Grid.ColumnSpan="2"  MouseDown="TextBlock_MouseDown"/>
+        <TextBlock Text="Registration" HorizontalAlignment="Center"  FontSize="60" Grid.ColumnSpan="2"  MouseDown="TextBlock_MouseDown"/>
         <TextBlock Text="name" Grid.Column="0" Grid.Row="1"/>
         <TextBlock Text="login" Grid.Column="0" Grid.Row="2"/>
         <TextBlock Text="password" Grid.Column="0" Grid.Row="3"/>
@@ -40,9 +56,9 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2">
-            <Button Content="regist" Margin="5" Padding="10" Click="Botton_Click"/>
-            <Button Content="revers" Margin="5" Padding="10" Click="Button_Click"/>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2" Width="220">
+            <Button Content="regist" FontSize="20" Margin="5" Padding="10" Click="Botton_Click" Background="DeepSkyBlue" Width="100"/>
+            <Button Content="revers" FontSize="20" Margin="5" Padding="10" Click="Button_Click" Background="DeepSkyBlue" Width="100"/>
         </StackPanel>
     </Grid>
 </Page>
