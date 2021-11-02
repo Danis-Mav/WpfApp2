@@ -22,25 +22,25 @@
         </Grid.RowDefinitions>
         
         <!--<Image Grid.ColumnSpan="3" Grid.RowSpan="3" Source="Image3.png" Stretch="Fill"/>-->
-        <TextBlock Text="ALCO potable" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.Column="0" Grid.Row="0" Background="DeepSkyBlue" Height="100" Width="400"/>
-        <TextBlock Text="NO ALCO potable" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="40" Grid.Column="1" Grid.Row="0" Background="DeepSkyBlue" Height="100" Width="400" />
-        <TextBlock Text="Dish" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.Column="2" Grid.Row="0" Background="DeepSkyBlue" Height="100" Width="400"/>
+        <TextBlock Text="ALCO potable" VerticalAlignment="Center" FontSize="40" Grid.Column="0" Grid.Row="0" />
+        <TextBlock Text="NO ALCO potable" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="40" Grid.Column="1" Grid.Row="0" />
+        <TextBlock Text="Dish" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.Column="2" Grid.Row="0" />
 
-        <DataGrid x:Name="AlcoGrid" Grid.Row="1" AutoGenerateColumns="False" Background="DeepSkyBlue">
+        <DataGrid x:Name="AlcoGrid" Grid.Row="1" AutoGenerateColumns="False" Background="CornflowerBlue">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Name }" />
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=Price }" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="AlcoGrid1" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" Background="DeepSkyBlue">
+        <DataGrid x:Name="AlcoGrid1" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" Background="CornflowerBlue">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Name }" />
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=Price }" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="AlcoGrid2" Grid.Row="1" Grid.Column="2" AutoGenerateColumns="False" Background="DeepSkyBlue">
+        <DataGrid x:Name="AlcoGrid2" Grid.Row="1" Grid.Column="2" AutoGenerateColumns="False" Background="CornflowerBlue">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Name }" />
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=Price }" />
