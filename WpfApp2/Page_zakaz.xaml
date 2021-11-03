@@ -26,29 +26,34 @@
         <TextBlock Text="NO ALCO potable" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="40" Grid.Column="1" Grid.Row="0" />
         <TextBlock Text="Dish" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Grid.Column="2" Grid.Row="0" />
 
-        <DataGrid x:Name="AlcoGrid" Grid.Row="1" AutoGenerateColumns="False" Background="CornflowerBlue">
+        <DataGrid x:Name="AlcoGrid" Grid.Row="1" AutoGenerateColumns="False" Background="CornflowerBlue" MouseDoubleClick="AlcoGrid_MouseDoubleClick" ItemsSource="{Binding alko}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Price }" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="AlcoGrid1" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" Background="CornflowerBlue" ItemsSource="{Binding noalk}" MouseDoubleClick="AlcoGrid1_MouseDoubleClick_1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Name }" />
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=Price }" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="AlcoGrid1" Grid.Row="1" Grid.Column="1" AutoGenerateColumns="False" Background="CornflowerBlue">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Name }" />
-                <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=Price }" />
-            </DataGrid.Columns>
-        </DataGrid>
-
-        <DataGrid x:Name="AlcoGrid2" Grid.Row="1" Grid.Column="2" AutoGenerateColumns="False" Background="CornflowerBlue">
+        <DataGrid x:Name="AlcoGrid2" Grid.Row="1" Grid.Column="2" AutoGenerateColumns="False" Background="CornflowerBlue" ItemsSource="{Binding dish}" MouseDoubleClick="AlcoGrid2_MouseDoubleClick_1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=Name }" />
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=Price }" />
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel  Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Width="240">
-            <Button  Content="BACK" FontSize="20" Padding="10" Click="back_" Margin="10" Background="DeepSkyBlue" Width="100"/>
+            <Button  Content="CANCEL" FontSize="20" Padding="10" Click="back_" Margin="10" Background="DeepSkyBlue" Width="100"/>
             <Button  Content="READY" FontSize="20" Padding="10" Click="ready_" Margin="10" Background="DeepSkyBlue" Width="100"/>
+        </StackPanel>
+        <StackPanel  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
+            <Button  Content="ADD_Alco" FontSize="20" Padding="10" Click="add" Margin="10" Background="DeepSkyBlue"/>
+            <Button  Content="ADD_NoAlco" FontSize="20" Padding="10" Click="add" Margin="10" Background="DeepSkyBlue"/>
+            <Button  Content="ADD_Dish" FontSize="20" Padding="10" Click="add" Margin="10" Background="DeepSkyBlue"/>
         </StackPanel>
     </Grid>
 </Page>

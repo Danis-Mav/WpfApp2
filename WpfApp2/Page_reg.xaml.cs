@@ -28,7 +28,6 @@ namespace WpfApp2
             InitializeComponent();
             Posit = new ObservableCollection<Position>(bd_connection.connection.Position.ToList());
             this.DataContext = this;
-
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)

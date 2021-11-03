@@ -31,5 +31,6 @@ namespace WpfApp2
         public virtual DbSet<NoAlk> NoAlk { get; set; }
         public virtual DbSet<Position> Position { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<zakaz> zakaz { get; set; }
     }
 }
